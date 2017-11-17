@@ -5,6 +5,7 @@ Linear Genetic Programming implemented in C#
 # Install
 
 ```bash
+Install-Package cs-statistics -Version 1.0.2
 Install-Package cs-linear-genetic-programming -Version 1.0.1
 ```
 

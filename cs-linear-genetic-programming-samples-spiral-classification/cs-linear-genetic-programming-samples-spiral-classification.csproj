@@ -7,7 +7,7 @@
     <ProjectGuid>{C9BBF901-40F8-4447-AEDB-A8A7A6A01A6C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>cs_linear_genetic_programming_samples_spiral_classification</RootNamespace>
+    <RootNamespace>LinearGP</RootNamespace>
     <AssemblyName>cs-linear-genetic-programming-samples-spiral-classification</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="cs-linear-genetic-programming, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cs-linear-genetic-programming.1.0.1\lib\net452\Release\cs-linear-genetic-programming.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="cs-statistics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cs-statistics.1.0.2\lib\net452\Release\cs-statistics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,12 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\cs-linear-genetic-programming\cs-linear-genetic-programming.csproj">
-      <Project>{e958506c-9b21-44e1-8170-2ab4f671a537}</Project>
-      <Name>cs-linear-genetic-programming</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
