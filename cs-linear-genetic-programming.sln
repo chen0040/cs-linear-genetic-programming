@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-linear-genetic-programmi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-linear-genetic-programming-samples", "cs-linear-genetic-programming-samples\cs-linear-genetic-programming-samples.csproj", "{94C1EF82-4F2B-466C-ACC4-6F6C48D9A22A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-linear-genetic-programming-samples-mexicanhat", "cs-linear-genetic-programming-samples-mexicanhat\cs-linear-genetic-programming-samples-mexicanhat.csproj", "{B30D87A1-AE47-4F22-8E64-1116412545E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94C1EF82-4F2B-466C-ACC4-6F6C48D9A22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94C1EF82-4F2B-466C-ACC4-6F6C48D9A22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94C1EF82-4F2B-466C-ACC4-6F6C48D9A22A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B30D87A1-AE47-4F22-8E64-1116412545E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30D87A1-AE47-4F22-8E64-1116412545E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30D87A1-AE47-4F22-8E64-1116412545E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30D87A1-AE47-4F22-8E64-1116412545E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

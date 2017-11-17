@@ -69,16 +69,16 @@ namespace LinearGP.ComponentModels
         private LGPOperatorSet mOperatorSet = new LGPOperatorSet();
 
         public delegate double EvaluateFitnessFromAllCasesHandle(List<LGPFitnessCase> cases);
-        public event EvaluateFitnessFromAllCasesHandle EvaluateFitnessFromAllCases;
+        public event EvaluateFitnessFromAllCasesHandle EvaluateCostFromAllCases;
 
         public delegate double EvaluateObjectiveHandle(LGPProgram program);
         public EvaluateObjectiveHandle ObjectiveEvaluator = null;
 
         internal double _EvaluateFitnessFromAllCases(List<LGPFitnessCase> cases)
         {
-            if (EvaluateFitnessFromAllCases != null)
+            if (EvaluateCostFromAllCases != null)
             {
-                return EvaluateFitnessFromAllCases(cases);
+                return EvaluateCostFromAllCases(cases);
             }
             else
             {
