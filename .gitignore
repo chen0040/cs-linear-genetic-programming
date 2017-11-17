@@ -4,6 +4,9 @@ bin/
 */obj/
 */bin/
 
+!cs-linear-genetic-programming/cs-linear-genetic-programming-samples-spiral-classification/bin/Debug/dataset.txt
+!cs-linear-genetic-programming/cs-linear-genetic-programming-samples-spiral-classification/bin/Release/dataset.txt
+
 *.user
 
 packages/
