@@ -5,6 +5,7 @@ using System.Text;
 
 namespace LinearGP.ComponentModels
 {
+    using System.IO;
     using System.Xml;
 
     public class LGPConfig
@@ -22,14 +23,37 @@ namespace LinearGP.ComponentModels
         private double mCrossoverRate = 0.5;
         private double mMacroMutationRate = 0.5;
         private double mMicroMutationRate = 0.5;
-        private Dictionary<string, string> mScripts = new Dictionary<string, string>();
+        protected Dictionary<string, string> mScripts = new Dictionary<string, string>();
+
+        public LGPConfig()
+        {
+            string filename = "LGPConfig.xml";
+
+            if (!File.Exists(filename))
+            {
+                File.WriteAllText(filename, Properties.Resources.LGPConfig);
+            }
+
+            Load(filename);
+        }
 
         public LGPConfig(string filename)
         {
+            if (!File.Exists(filename))
+            {
+                File.WriteAllText(filename, Properties.Resources.LGPConfig);
+            }
+
+            Load(filename);
+        }
+
+        public virtual void Load(String filename)
+        {
             mFilename = filename;
+
             XmlDocument doc = new XmlDocument();
             doc.Load(filename);
-            XmlElement doc_root=doc.DocumentElement;
+            XmlElement doc_root = doc.DocumentElement;
 
             foreach (XmlElement xml_level1 in doc_root.ChildNodes)
             {
@@ -37,13 +61,13 @@ namespace LinearGP.ComponentModels
                 {
                     foreach (XmlElement xml_level2 in xml_level1.ChildNodes)
                     {
-                        if(xml_level2.Name=="param")
+                        if (xml_level2.Name == "param")
                         {
                             string attrname = xml_level2.Attributes["name"].Value;
                             string attrvalue = xml_level2.Attributes["value"].Value;
                             if (attrname == "NumRegisters")
                             {
-                                int value=0;
+                                int value = 0;
                                 int.TryParse(attrvalue, out value);
                                 mRegisterCount = value;
                             }
@@ -110,7 +134,7 @@ namespace LinearGP.ComponentModels
                 {
                     foreach (XmlElement xml_level2 in xml_level1.ChildNodes)
                     {
-                        if(xml_level2.Name=="constant")
+                        if (xml_level2.Name == "constant")
                         {
                             double value, weight;
                             double.TryParse(xml_level2.Attributes["value"].Value, out value);
@@ -132,7 +156,6 @@ namespace LinearGP.ComponentModels
                     }
                 }
             }
-
         }
 
         public double MicroMutateConstantRate { get { return mMicroMutateConstantRate; } }
@@ -161,14 +184,6 @@ namespace LinearGP.ComponentModels
 
         public int PopulationSize { get { return mPopulationSize; } }
 
-        public string GetScript(string p)
-        {
-            if (mScripts.ContainsKey(p))
-            {
-                return mScripts[p];
-            }
-            return null;
-        }
 
         public int MaxGenerations { get { return mMaxGenerations; } }
 
@@ -177,5 +192,49 @@ namespace LinearGP.ComponentModels
         public double MacroMutationRate { get { return mMacroMutationRate; } }
 
         public double MicroMutationRate { get { return mMicroMutationRate; } }
+
+        public virtual string GetScript(string p)
+        {
+            if (mScripts.ContainsKey(p))
+            {
+                string scriptPath = mScripts[p];
+                if (!File.Exists(scriptPath))
+                {
+                    DirectoryInfo parentDir = Directory.GetParent(scriptPath);
+                    if (!parentDir.Exists)
+                    {
+                        parentDir.Create();
+                    }
+                    if (p == ScriptNames.CrossoverInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.LGPCrossoverInstructionFactory);
+                    }
+                    else if (p == ScriptNames.MutationInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.LGPMutationInstructionFactory);
+                    }
+                    else if (p == ScriptNames.PopInitInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.LGPPopInitInstructionFactory);
+                    }
+                    else if (p == ScriptNames.ReproductionSelectionInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.LGPReproductionSelectionInstructionFactory);
+                    }
+                    else if (p == ScriptNames.SurvivalInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.LGPSurvivalInstructionFactory);
+                    }
+                    else if(p == ScriptNames.RegInitInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.LGPRegInitInstructionFactory);
+                    }
+
+                }
+                return scriptPath;
+
+            }
+            return null;
+        }
     }
 }

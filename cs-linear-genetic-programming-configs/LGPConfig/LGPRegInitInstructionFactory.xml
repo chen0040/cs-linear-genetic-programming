@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<reg_init strategy="complete_initialization_of_register_with_input">
+
+<strategy name="complete_initialization_of_register_with_input" >
+</strategy>
+
+<strategy name="initialize_register_with_input">
+<param name="input_copy_count" value="1" />
+<param name="default_register_value" value="1" />
+</strategy>
+
+<strategy name="copy_input_into_constant_set">
+<param name="default_register_value" value="1" />
+</strategy>
+
+</reg_init>

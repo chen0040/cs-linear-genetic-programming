@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pop_init strategy="variable_length">
+
+<strategy name="variable_length">
+<param name="InitialMinProgLength" value="5" />
+<param name="InitialMaxProgLength" value="15" />
+</strategy>
+
+<strategy name="constant_length">
+<param name="constant_length" value="10" />
+</strategy>
+
+</pop_init>

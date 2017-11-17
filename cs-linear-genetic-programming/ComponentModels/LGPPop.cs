@@ -404,12 +404,12 @@ namespace LinearGP.ComponentModels
             if (mSetup == false)
             {
                 mEnvironment = CreateEnvironment(mConfig);
-                mMutationInstructionFactory = CreateMutationInstructionFactory(mConfig.GetScript("LGPMutationInstructionFactory"));
-                mCrossoverInstructionFactory = CreateCrossoverInstructionFactory(mConfig.GetScript("LGPCrossoverInstructionFactory"));
-                mPopInitInstructionFactory = CreatePopInitInstructionFactory(mConfig.GetScript("LGPPopInitInstructionFactory"));
-                mReproductionSelectionInstructionFactory = CreateReproductionSelectionInstructionFactory(mConfig.GetScript("LGPReproductionSelectionInstructionFactory"));
-                mRegInitInstructionFactory = CreateRegInitInstructionFactory(mConfig.GetScript("LGPRegInitInstructionFactory"));
-                mSurvivalInstructionFactory = CreateSurvivalInstructionFactory(mConfig.GetScript("LGPSurvivalInstructionFactory"));
+                mMutationInstructionFactory = CreateMutationInstructionFactory(mConfig.GetScript(ScriptNames.MutationInstructionFactory));
+                mCrossoverInstructionFactory = CreateCrossoverInstructionFactory(mConfig.GetScript(ScriptNames.CrossoverInstructionFactory));
+                mPopInitInstructionFactory = CreatePopInitInstructionFactory(mConfig.GetScript(ScriptNames.PopInitInstructionFactory));
+                mReproductionSelectionInstructionFactory = CreateReproductionSelectionInstructionFactory(mConfig.GetScript(ScriptNames.ReproductionSelectionInstructionFactory));
+                mRegInitInstructionFactory = CreateRegInitInstructionFactory(mConfig.GetScript(ScriptNames.RegInitInstructionFactory));
+                mSurvivalInstructionFactory = CreateSurvivalInstructionFactory(mConfig.GetScript(ScriptNames.SurvivalInstructionFactory));
                 mSetup = true;
             }
         }

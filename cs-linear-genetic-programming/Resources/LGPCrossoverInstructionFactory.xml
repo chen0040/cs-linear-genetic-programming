@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<crossover strategy="linear">
+
+<strategy name="linear" >
+<param name="max_program_length" value="200" />
+<param name="min_program_length" value="1" />
+<param name="max_segment_length" value="5" />
+<param name="max_distance_of_crossover_points" value="5" />
+<param name="max_difference_in_segment_length" value="2" />
+</strategy>
+
+<strategy name="one_point" >
+<param name="max_program_length" value="200" />
+<param name="min_program_length" value="1" />
+<param name="max_distance_of_crossover_points" value="5" />
+</strategy>
+
+<strategy name="one_seg" >
+<param name="insertion_probability" value="0.5" />
+<param name="min_program_length" value="1" />
+<param name="max_program_length" value="200" />
+<param name="max_segment_length" value="10" />
+</strategy>
+
+</crossover>
