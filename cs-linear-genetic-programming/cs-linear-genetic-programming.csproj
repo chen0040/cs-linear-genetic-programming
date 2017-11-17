@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E958506C-9B21-44E1-8170-2AB4F671A537}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cs_linear_genetic_programming</RootNamespace>
+    <AssemblyName>cs-linear-genetic-programming</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cs-statistics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cs-statistics.1.0.2\lib\net452\Release\cs-statistics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlgorithmModels\Crossover\LGPCrossoverInstruction.cs" />
+    <Compile Include="AlgorithmModels\Crossover\LGPCrossoverInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Crossover\LGPCrossoverInstruction_Linear.cs" />
+    <Compile Include="AlgorithmModels\Crossover\LGPCrossoverInstruction_OnePoint.cs" />
+    <Compile Include="AlgorithmModels\Crossover\LGPCrossoverInstruction_OneSegment.cs" />
+    <Compile Include="AlgorithmModels\Mutation\LGPMutationInstruction.cs" />
+    <Compile Include="AlgorithmModels\Mutation\LGPMutationInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Mutation\LGPMutationInstruction_Macro.cs" />
+    <Compile Include="AlgorithmModels\PopInit\LGPPopInitInstruction.cs" />
+    <Compile Include="AlgorithmModels\PopInit\LGPPopInitInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\PopInit\LGPPopInitInstruction_ConstantLength.cs" />
+    <Compile Include="AlgorithmModels\PopInit\LGPPopInitInstruction_VariableLength.cs" />
+    <Compile Include="AlgorithmModels\RegInit\LGPRegInitInstruction.cs" />
+    <Compile Include="AlgorithmModels\RegInit\LGPRegInitInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\RegInit\LGPRegInitInstruction_CompleteInputInitReg.cs" />
+    <Compile Include="AlgorithmModels\RegInit\LGPRegInitInstruction_Standard.cs" />
+    <Compile Include="AlgorithmModels\Selection\LGPSelectionInstruction.cs" />
+    <Compile Include="AlgorithmModels\Selection\LGPSelectionInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Selection\LGPSelectionInstruction_Tournament.cs" />
+    <Compile Include="AlgorithmModels\Survival\LGPSurvivalInstruction.cs" />
+    <Compile Include="AlgorithmModels\Survival\LGPSurvivalInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Survival\LGPSurvivalInstruction_Compete.cs" />
+    <Compile Include="AlgorithmModels\Survival\LGPSurvivalInstruction_Probablistic.cs" />
+    <Compile Include="ComponentModels\LGPConfig.cs" />
+    <Compile Include="ComponentModels\LGPConstantSet.cs" />
+    <Compile Include="ComponentModels\LGPInstruction.cs" />
+    <Compile Include="ComponentModels\LGPOperator.cs" />
+    <Compile Include="ComponentModels\LGPOperatorSet.cs" />
+    <Compile Include="ComponentModels\LGPPop.cs" />
+    <Compile Include="ComponentModels\LGPProgram.cs" />
+    <Compile Include="ComponentModels\LGPProtectedDefinition.cs" />
+    <Compile Include="ComponentModels\LGPRegister.cs" />
+    <Compile Include="ComponentModels\LGPRegisterSet.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Cos.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Division.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Exp.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Ifgt.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Iflt.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Log.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Minus.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Multiplication.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Plus.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Power.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Sin.cs" />
+    <Compile Include="ComponentModels\Operators\LGPOperator_Sqrt.cs" />
+    <Compile Include="ProblemModels\LGPEnvironment.cs" />
+    <Compile Include="ProblemModels\LGPFitnessCase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

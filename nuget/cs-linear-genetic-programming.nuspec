@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>cs-linear-genetic-programming</id>
+    <version>1.0.1</version>
+    <authors>chen0040</authors>
+    <owners>chen0040</owners>
+    <licenseUrl>https://github.com/chen0040/cs-linear-genetic-programming/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/chen0040/cs-linear-genetic-programming</projectUrl>
+    <iconUrl>https://rawgit.com/chen0040/cs-linear-genetic-programming/master/icon.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Linear Genetic Programming</description>
+    <releaseNotes>Linear Genetic Programming in .NET 4.5.2</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Genetic Programming, Linear Genetic, c-sharp</tags>
+    <dependencies>
+      
+    </dependencies>
+  </metadata>
+</package>
