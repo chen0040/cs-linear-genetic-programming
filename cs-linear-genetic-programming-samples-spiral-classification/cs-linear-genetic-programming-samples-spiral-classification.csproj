@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>cs_linear_genetic_programming_samples_spiral_classification</RootNamespace>
-    <AssemblyName>cs_linear_genetic_programming_samples_spiral_classification</AssemblyName>
+    <AssemblyName>cs-linear-genetic-programming-samples-spiral-classification</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,9 +45,16 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpiralFitnessCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cs-linear-genetic-programming\cs-linear-genetic-programming.csproj">
+      <Project>{e958506c-9b21-44e1-8170-2ab4f671a537}</Project>
+      <Name>cs-linear-genetic-programming</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
