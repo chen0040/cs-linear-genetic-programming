@@ -34,11 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="cs-linear-genetic-programming, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\cs-linear-genetic-programming.1.0.1\lib\net452\Release\cs-linear-genetic-programming.dll</HintPath>
+      <HintPath>..\packages\cs-linear-genetic-programming.1.0.2\lib\net452\Release\cs-linear-genetic-programming.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="cs-statistics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\cs-statistics.1.0.2\lib\net452\Release\cs-statistics.dll</HintPath>
+      <HintPath>..\packages\cs-linear-genetic-programming.1.0.2\lib\net452\Release\cs-statistics.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
